@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:update_task01/main_info.dart';
 
 //-------Main Login Screen------//
 
@@ -15,8 +16,7 @@ class _SignInState extends State<SignIn> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              fit: BoxFit.fill, 
-              image: AssetImage('assets/sign_in.png')),
+              fit: BoxFit.fill, image: AssetImage('assets/sign_in.png')),
         ),
         child: ListView(
           padding: EdgeInsets.all(30),
@@ -90,8 +90,8 @@ class _SignInState extends State<SignIn> {
                     borderRadius: BorderRadius.circular(10)),
               ),
               onPressed: () {
-                // Navigator.of(context).push(
-                //     MaterialPageRoute(builder: (context) => Screen4()));
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Home()));
               },
             ),
             SizedBox(height: 10),
@@ -100,15 +100,19 @@ class _SignInState extends State<SignIn> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  child: Text('SignUp',style: TextStyle(color: Colors.black),),
-                  onPressed: () {
-                  },
+                  child: Text(
+                    'SignUp',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  onPressed: () {},
                 ),
                 SizedBox(width: 100),
                 TextButton(
-                  child: Text('Forget Password',style: TextStyle(color: Colors.black),),
-                  onPressed: () {
-                  },
+                  child: Text(
+                    'Forget Password',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  onPressed: () {},
                 ),
               ],
             ),
