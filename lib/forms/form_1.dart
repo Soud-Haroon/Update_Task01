@@ -8,6 +8,6 @@ class FormOne extends StatefulWidget {
 class _FormOneState extends State<FormOne> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Form(child: child);
   }
 }
