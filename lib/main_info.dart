@@ -9,10 +9,17 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFF5F5F7),
-      body: Center(
-        child: DotLineBar(),
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.fill, image: AssetImage('assets/sign_in.png'))),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: ListView(
+          children: [
+            DotLineBar(),
+          ],
+        ),
       ),
     );
   }

@@ -12,13 +12,14 @@ class _SignInState extends State<SignIn> {
   late String data;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.fill, image: AssetImage('assets/sign_in.png')),
-        ),
-        child: ListView(
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            fit: BoxFit.fill, image: AssetImage('assets/sign_in.png')),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: ListView(
           padding: EdgeInsets.all(30),
           children: [
             SizedBox(height: 100),
