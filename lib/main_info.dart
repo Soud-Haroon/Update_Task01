@@ -9,15 +9,14 @@ class Home extends StatelessWidget {
       backgroundColor: Color(0xFFF5F5F7),
       body: Center(
         child: Container(
-          width: 200.0,
+          width: 160.0,
           // color: Colors.amberAccent,
           child: Stack(
             alignment: Alignment.center,
             children: [
               Container(
-                width: 180.0,
                 child: Divider(
-                  color: Colors.grey,
+                  color: Colors.grey[400],
                   thickness: 1,
                 ),
               ),
@@ -25,13 +24,82 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   for (var step in steps)
-                    Icon(
-                      Icons.circle,
-                      color: step == 1 ? Colors.redAccent[400] : Colors.grey,
-                      size: step == 1 ? 24.0 : 16.0,
-                    )
+                    Container(
+                      height: 10,
+                      width: 10,
+                      decoration: BoxDecoration(
+                        border: step == 2
+                            ? Border.all(width: 1.8, color: Color(0xffC53B4B))
+                            : Border.all(width: 1.8, color: Color(0xffEEB8B8)),
+                        borderRadius: BorderRadius.circular(20),
+                        color:
+                            step == 2 ? Color(0xffC53B4B) : Color(0xFFF5F5F7),
+                      ),
+                    ),
                 ],
               )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Icon(
+// Icons.circle,
+// color: step == 1 ? Colors.redAccent[400] : Colors.grey,
+// size: step == 1 ? 24.0 : 16.0,
+// )
+
+class OutlineCircle extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          width: 150,
+          child: Row(
+            children: [
+              Icon(Icons.panorama_fish_eye, color: Colors.red[300], size: 15.0),
+              Expanded(
+                child: Divider(
+                  color: Colors.grey[400],
+                  thickness: 2,
+                ),
+              ),
+              Icon(Icons.panorama_fish_eye, color: Colors.red[300], size: 15.0),
+              Expanded(
+                child: Divider(
+                  color: Colors.grey[400],
+                  thickness: 2,
+                ),
+              ),
+              Icon(Icons.panorama_fish_eye, color: Colors.red[300], size: 15.0),
+              Expanded(
+                child: Divider(
+                  color: Colors.grey[400],
+                  thickness: 2,
+                ),
+              ),
+              Icon(Icons.panorama_fish_eye, color: Colors.red[300], size: 15.0),
+              Expanded(
+                child: Divider(
+                  color: Colors.grey[400],
+                  thickness: 2,
+                ),
+              ),
+              Icon(Icons.panorama_fish_eye, color: Colors.red[300], size: 15.0),
+              //-------------------------------//
+              Container(
+                height: 10,
+                width: 10,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1.8, color: Color(0xffEEB8B8)),
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.transparent,
+                ),
+              ),
             ],
           ),
         ),
