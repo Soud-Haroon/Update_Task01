@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:update_task01/forms/form_2.dart';
+import 'package:update_task01/forms/form_3.dart';
 import 'package:update_task01/functions/dotbar.dart';
 
 import 'forms/form_1.dart';
@@ -32,7 +34,7 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.all(30),
           children: [
             DotLineBar(),
-            FormOne(),
+            FormThree(),
             Button(),
           ],
         ),

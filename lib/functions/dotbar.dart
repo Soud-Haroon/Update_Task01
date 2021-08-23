@@ -27,7 +27,6 @@ class _DotLineBarState extends State<DotLineBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
