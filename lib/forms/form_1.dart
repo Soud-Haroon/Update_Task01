@@ -27,24 +27,21 @@ class _FormOneState extends State<FormOne> {
                 ),
               ),
               Positioned(
-                  //using position to adjust icon on picture
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                          width: 3,
-                          color: Theme.of(context).scaffoldBackgroundColor),
-                      shape: BoxShape.circle,
-                      color: Color(0xffC53B4B), //color red
-                    ),
-                    child: Icon(
-                      Icons.edit,
-                      color: Colors.white,
-                    ),
-                  )),
+                bottom: 0,
+                right: 0,
+                child: Image(
+                  image: AssetImage('assets/Vector.png'),
+                  width: 30,
+                  fit: BoxFit.cover,
+                )),
+                Positioned(
+                bottom: 4,
+                right: 4,
+                child: Icon(
+                  Icons.edit_outlined,
+                  size: 20,
+                  color: Colors.white,
+                )),
             ],
           ),
           SizedBox(
