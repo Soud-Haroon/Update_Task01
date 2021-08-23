@@ -27,12 +27,12 @@ class _DotLineBarState extends State<DotLineBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(vertical: 15),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //-------------Main Container in which bar added---------//
           Container(
-            // width: 300,
             child: FractionallySizedBox(
               widthFactor: 0.7,
               child: Stack(

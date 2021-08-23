@@ -17,6 +17,7 @@ class _SignInState extends State<SignIn> {
         image: DecorationImage(
             fit: BoxFit.fill, image: AssetImage('assets/sign_in.png')),
       ),
+      //-----------------------------------------//
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: ListView(
@@ -34,52 +35,74 @@ class _SignInState extends State<SignIn> {
             ),
             SizedBox(height: 50),
             //------------------------------------------------------//
-            TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: "Email",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
+            Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: Column(children: [
+                TextFormField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: "Email",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                        ),
+                      ),
                     ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                ),
-                onChanged: (value) {
-                  data = value;
-                }),
+                    //----------------------------------//
+                    validator: (value) {
+                      final pattern =
+                          (r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$');
+                      final regExp = RegExp(pattern);
 
-            SizedBox(height: 20),
-            //-------------------------------------------------------//
-            TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: "Password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                ),
-                onChanged: (value) {
-                  data = value;
-                }),
+                      if (value!.contains(' ')) {
+                        return 'Cant have blank spaces';
+                      } else if (!regExp.hasMatch(value)) {
+                        return 'Enter a valid email';
+                      } else {
+                        return null;
+                      }
+                      //----------------------------------//
+                    }),
+
+                      SizedBox(height: 20),
+                      //-------------------------------------------------------//
+                      TextFormField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: "Password",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                              ),
+                            ),
+                          ),
+                          validator: (value) {
+                              if (value!.contains(' ')) {
+                                return 'Password can not contain blank Spaces';
+                              } else if (value.length < 6) {
+                                return 'Enter atleast 8 characters';
+                              } else
+                                return null;
+                            }),
+                    ]),
+            ),
             SizedBox(height: 20),
             //--------------------------------------------//
             ElevatedButton(
