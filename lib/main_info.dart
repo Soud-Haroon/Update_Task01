@@ -33,8 +33,56 @@ class _HomeState extends State<Home> {
           children: [
             DotLineBar(),
             FormOne(),
+            Button(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+//-------------------------------------------------//
+
+class Button extends StatelessWidget {   //creating two button: textbutton and simple button
+  // var nav;                               //intializing reference for different screens
+  // Button(this.nav);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          TextButton(
+            style: ButtonStyle(
+              foregroundColor:
+                  MaterialStateProperty.all<Color>(Colors.black),
+            ),
+            onPressed: () {
+                  // Navigator.of(context)
+                  // .push(MaterialPageRoute(builder: (context) => Nav(0)));//linking to Navigation index 0: see navbar.dart
+            },
+            child: Text('Skip'),               //skip button
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            height: 70,
+            child: ElevatedButton(
+              child: Text('Next'),                //next button
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                primary: Color(0xffC53B4B),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+              ),
+              onPressed: () {
+                // Navigator.of(context)
+                //     .push(MaterialPageRoute(builder: (context) => Screen5())); //linking Screen5
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
