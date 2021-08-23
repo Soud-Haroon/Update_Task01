@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
 
-class DotLineBar extends StatefulWidget {
-  @override
-  _DotLineBarState createState() => _DotLineBarState();
-}
-
-class _DotLineBarState extends State<DotLineBar> {
+// ignore: must_be_immutable
+class DotLineBar extends StatelessWidget {
+  DotLineBar(this.counter);
   final List<int> steps = [1, 2, 3, 4, 5];
-  int counter = 1;
-  int value = 1;
+  int counter;
 
-  void _increaseCount() {
-    // ignore: todo
-    // TODO: implement setState
-    super.setState(() {
-      if (counter != 5) {
-        counter++;
-        print(counter);
-      } else {
-        counter = 1;
-        print("$counter : 1 mean Value reset");
-      }
-    });
-  }
+  // void _increaseCount() {
+  //   // ignore: todo
+  // ignore: todo
+  //   // TODO: implement setState
+  //   super.setState(() {
+  //     if (counter != 5) {
+  //       counter++;
+  //       print(counter);
+  //     } else {
+  //       counter = 1;
+  //       print("$counter : 1 mean Value reset");
+  //     }
+  //   });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +29,7 @@ class _DotLineBarState extends State<DotLineBar> {
           //-------------Main Container in which bar added---------//
           Container(
             child: FractionallySizedBox(
-              widthFactor: 0.7,
+              widthFactor: 0.8,
               child: Stack(
                 alignment: Alignment.center,
                 children: [

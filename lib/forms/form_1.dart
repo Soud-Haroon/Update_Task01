@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:update_task01/functions/dotbar.dart';
 
 class FormOne extends StatefulWidget {
   @override
@@ -12,6 +13,11 @@ class _FormOneState extends State<FormOne> {
     return Form(
       child: Column(
         children: [
+          SizedBox(height: 5),
+          Text('Personal Info',style: TextStyle( fontSize: 20)),
+          SizedBox(height: 20),
+          DotLineBar(1),
+          SizedBox(height: 20),
           Stack(
             //using stack to lap edit icon over Picture
             children: [
@@ -75,6 +81,18 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+                    final regExp = RegExp(pattern);
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only Alphabets';
+                    } else {
+                      return null;
+                    }
+                  },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//
@@ -97,6 +115,18 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+                    final regExp = RegExp(pattern);
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only Alphabets';
+                    } else {
+                      return null;
+                    }
+                  },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//
@@ -119,6 +149,22 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern =
+                        (r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$');
+                    final regExp = RegExp(pattern);
+
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (value.contains(' ')) {
+                      return 'can not have blank spaces';
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter a valid email';
+                    } else {
+                      return null;
+                    }
+                  },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//
@@ -141,6 +187,17 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
+                keyboardType: TextInputType.number,
+                  validator: (value) {
+                    final regExp = RegExp('[0-9]');
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only number';
+                    } else {
+                      return null;
+                    }
+                  },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//

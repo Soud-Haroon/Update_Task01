@@ -20,17 +20,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-const MaterialColor _materialColor = MaterialColor(0xffC53B4B, <int, Color>{
-  50: Color(0xffC53B4B),
-  100: Color(0xffC53B4B),
-  200: Color(0xffC53B4B),
-  300: Color(0xffC53B4B),
-  400: Color(0xffC53B4B),
-  500: Color(0xffC53B4B),
-  600: Color(0xffC53B4B),
-  700: Color(0xffC53B4B),
-  800: Color(0xffC53B4B),
-  900: Color(0xffC53B4B),
+const MaterialColor _materialColor = MaterialColor(0xffBF2634, <int, Color>{
+  50: Color(0xffBF2634),
+  100: Color(0xffBF2634),
+  200: Color(0xffBF2634),
+  300: Color(0xffBF2634),
+  400: Color(0xffBF2634),
+  500: Color(0xffBF2634),
+  600: Color(0xffBF2634),
+  700: Color(0xffBF2634),
+  800: Color(0xffBF2634),
+  900: Color(0xffBF2634),
 });
 
 class MyHomePage extends StatefulWidget {

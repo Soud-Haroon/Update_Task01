@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:update_task01/functions/dotbar.dart';
+import 'package:update_task01/main_info.dart';
 
 class FormThree extends StatefulWidget {
   @override
@@ -11,7 +13,23 @@ class _FormThreeState extends State<FormThree> {
     return Form(
         child: Column(
       children: [
+                SizedBox(height: 5),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+          IconButton(          //Icon used to pop back
+          icon: Icon(Icons.arrow_back_ios_new),
+          color: Colors.black,
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home())),
+        ),
+            Text('Education',style: TextStyle( fontSize: 20)),
+            SizedBox(width: 30),
+        ],),
+          
+          SizedBox(height: 20),
+          DotLineBar(3), 
         SizedBox(height: 40),
+        //-----------------------------------------------------//
         TextFormField(
           decoration: InputDecoration(
               border: OutlineInputBorder(
@@ -31,6 +49,18 @@ class _FormThreeState extends State<FormThree> {
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
               )),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+                    final regExp = RegExp(pattern);
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only Alphabets';
+                    } else {
+                      return null;
+                    }
+                  },
         ),
         SizedBox(height: 15),
         //-------------------------------------------------//
@@ -53,6 +83,18 @@ class _FormThreeState extends State<FormThree> {
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
               )),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+                    final regExp = RegExp(pattern);
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only Alphabets';
+                    } else {
+                      return null;
+                    }
+                  },
         ),
         SizedBox(height: 15),
         //-------------------------------------------------//
@@ -75,6 +117,18 @@ class _FormThreeState extends State<FormThree> {
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
               )),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+                    final regExp = RegExp(pattern);
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only Alphabets';
+                    } else {
+                      return null;
+                    }
+                  },
         ),
         SizedBox(height: 5),
         //-------------------------------------------------//
@@ -148,6 +202,18 @@ class _FormThreeState extends State<FormThree> {
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
               )),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+                    final regExp = RegExp(pattern);
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only Alphabets';
+                    } else {
+                      return null;
+                    }
+                  },
         ),
         SizedBox(height: 15),
         //-------------------------------------------------//
@@ -166,6 +232,18 @@ class _FormThreeState extends State<FormThree> {
                   color: Colors.transparent,
                 )),
           ),
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+                    final regExp = RegExp(pattern);
+                    if (value!.isEmpty) {
+                      return null;
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Enter only Alphabets';
+                    } else {
+                      return null;
+                    }
+                  },
         ),
         SizedBox(height: 10),
       ],
