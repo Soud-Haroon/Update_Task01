@@ -14,7 +14,7 @@ class _FormOneState extends State<FormOne> {
       child: Column(
         children: [
           SizedBox(height: 5),
-          Text('Personal Info',style: TextStyle( fontSize: 20)),
+          Text('Personal Info', style: TextStyle(fontSize: 20)),
           SizedBox(height: 20),
           DotLineBar(1),
           SizedBox(height: 20),
@@ -27,21 +27,21 @@ class _FormOneState extends State<FormOne> {
                 ),
               ),
               Positioned(
-                bottom: 0,
-                right: 0,
-                child: Image(
-                  image: AssetImage('assets/Vector.png'),
-                  width: 30,
-                  fit: BoxFit.cover,
-                )),
-                Positioned(
-                bottom: 4,
-                right: 4,
-                child: Icon(
-                  Icons.edit_outlined,
-                  size: 20,
-                  color: Colors.white,
-                )),
+                  bottom: 0,
+                  right: 0,
+                  child: Image(
+                    image: AssetImage('assets/Vector.png'),
+                    width: 30,
+                    fit: BoxFit.cover,
+                  )),
+              Positioned(
+                  bottom: 4,
+                  right: 4,
+                  child: Icon(
+                    Icons.edit_outlined,
+                    size: 20,
+                    color: Colors.white,
+                  )),
             ],
           ),
           SizedBox(
@@ -78,18 +78,18 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
-                    final regExp = RegExp(pattern);
-                    if (value!.isEmpty) {
-                      return null;
-                    } else if (!regExp.hasMatch(value)) {
-                      return 'Enter only Alphabets';
-                    } else {
-                      return null;
-                    }
-                  },
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: (value) {
+              final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+              final regExp = RegExp(pattern);
+              if (value!.isEmpty) {
+                return null;
+              } else if (!regExp.hasMatch(value)) {
+                return 'Enter only Alphabets';
+              } else {
+                return null;
+              }
+            },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//
@@ -112,18 +112,18 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
-                    final regExp = RegExp(pattern);
-                    if (value!.isEmpty) {
-                      return null;
-                    } else if (!regExp.hasMatch(value)) {
-                      return 'Enter only Alphabets';
-                    } else {
-                      return null;
-                    }
-                  },
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: (value) {
+              final pattern = ('[a-zA-Z]+([\s][a-zA-Z]+)*');
+              final regExp = RegExp(pattern);
+              if (value!.isEmpty) {
+                return null;
+              } else if (!regExp.hasMatch(value)) {
+                return 'Enter only Alphabets';
+              } else {
+                return null;
+              }
+            },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//
@@ -146,22 +146,22 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    final pattern =
-                        (r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$');
-                    final regExp = RegExp(pattern);
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: (value) {
+              final pattern =
+                  (r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$');
+              final regExp = RegExp(pattern);
 
-                    if (value!.isEmpty) {
-                      return null;
-                    } else if (value.contains(' ')) {
-                      return 'can not have blank spaces';
-                    } else if (!regExp.hasMatch(value)) {
-                      return 'Enter a valid email';
-                    } else {
-                      return null;
-                    }
-                  },
+              if (value!.isEmpty) {
+                return null;
+              } else if (value.contains(' ')) {
+                return 'can not have blank spaces';
+              } else if (!regExp.hasMatch(value)) {
+                return 'Enter a valid email';
+              } else {
+                return null;
+              }
+            },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//
@@ -184,17 +184,17 @@ class _FormOneState extends State<FormOne> {
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 )),
-                keyboardType: TextInputType.number,
-                  validator: (value) {
-                    final regExp = RegExp('[0-9]');
-                    if (value!.isEmpty) {
-                      return null;
-                    } else if (!regExp.hasMatch(value)) {
-                      return 'Enter only number';
-                    } else {
-                      return null;
-                    }
-                  },
+            keyboardType: TextInputType.number,
+            validator: (value) {
+              final regExp = RegExp('[0-9]');
+              if (value!.isEmpty) {
+                return null;
+              } else if (!regExp.hasMatch(value)) {
+                return 'Enter only number';
+              } else {
+                return null;
+              }
+            },
           ),
           SizedBox(height: 15),
           //-------------------------------------------------//
@@ -275,7 +275,7 @@ class _FormOneState extends State<FormOne> {
               children: [
                 Text('Date of Birth', style: TextStyle(color: Colors.grey)),
                 IconButton(
-                    icon: Icon(Icons.today,color: Colors.grey),
+                    icon: Icon(Icons.today, color: Colors.grey),
                     onPressed: () {
                       showDatePicker(
                           context: context,
