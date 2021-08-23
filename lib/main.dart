@@ -13,12 +13,25 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
        
-        primarySwatch: Colors.red,
+        primarySwatch: _materialColor,
       ),
       home: SignIn(),
     );
   }
 }
+
+const MaterialColor _materialColor = MaterialColor(0xffbf2634, <int, Color>{
+  50: Color(0xffbf2634),
+  100: Color(0xffbf2634),
+  200: Color(0xffbf2634),
+  300: Color(0xffbf2634),
+  400: Color(0xffbf2634),
+  500: Color(0xffbf2634),
+  600: Color(0xffbf2634),
+  700: Color(0xffbf2634),
+  800: Color(0xffbf2634),
+  900: Color(0xffbf2634),
+});
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);

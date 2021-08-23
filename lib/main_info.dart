@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:update_task01/functions/dotbar.dart';
 
+import 'forms/form_1.dart';
+
 class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
@@ -27,8 +29,10 @@ class _HomeState extends State<Home> {
         ),
         backgroundColor: Colors.transparent,
         body: ListView(
+          padding: EdgeInsets.all(30),
           children: [
             DotLineBar(),
+            FormOne(),
           ],
         ),
       ),

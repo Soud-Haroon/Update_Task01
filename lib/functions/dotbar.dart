@@ -27,7 +27,7 @@ class _DotLineBarState extends State<DotLineBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 15),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -70,10 +70,10 @@ class _DotLineBarState extends State<DotLineBar> {
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: _increaseCount,
-            child: Icon(Icons.add),
-          )
+          // ElevatedButton(
+          //   onPressed: _increaseCount,
+          //   child: Icon(Icons.add),
+          // )
         ],
       ),
     );
