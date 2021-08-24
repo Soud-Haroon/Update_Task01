@@ -1,64 +1,118 @@
 import 'package:flutter/material.dart';
 
-class MainProfile extends StatelessWidget {
+final darkRed = Color(0xffbf2634);
+
+class MainProfile extends StatefulWidget {
+  @override
+  _MainProfileState createState() => _MainProfileState();
+}
+
+class _MainProfileState extends State<MainProfile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: EdgeInsets.only(
-                top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                CircleAvatar(
-                  child: Icon(
-                    Icons.list,
-                    size: 30.0,
-                    color: Colors.lightBlueAccent,
-                  ),
-                  backgroundColor: Colors.white,
-                  radius: 30.0,
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  'Todoey',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 50.0,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Text(
-                  'Tasks',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/back.png'),
+          fit: BoxFit.fill,
+        ),
+      ),
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/foggy.jpg'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ],
             ),
-          ),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
+            Positioned(
+              //positioned of checkin layer at top UI
+              left: 40,
+              right: 40,
+              top: 175,
+              child: ClipRRect(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.0),
-                  topRight: Radius.circular(20.0),
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                child: Container(
+                  height: 160,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    border: Border(bottom: BorderSide(color: darkRed)),
+                    color: Colors.lime,
+                  ),
                 ),
               ),
-              // child: TasksList(),
             ),
-          ),
-        ],
+            Container(
+              height: MediaQuery.of(context).size.height * 0.30,
+              color: Colors.green,
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
+// class MainProfile extends StatelfullWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         image: DecorationImage(
+//           image: AssetImage('assets/back.png'),
+//           fit: BoxFit.fill,
+//         ),
+//       ),
+//       child: Scaffold(
+//           // body: Stack(
+//           //   children: [
+//           //     Column(
+//           //       children: [
+//           //         Container(
+//           //           height: MediaQuery.of(context).size.height * 0.35,
+//           //           decoration: BoxDecoration(
+//           //             image: DecorationImage(
+//           //               image: AssetImage('assets/foggy.jpg'),
+//           //               fit: BoxFit.cover,
+//           //             ),
+//           //           ),
+//           //         ),
+//           //       ],
+//           //     ),
+//           //     Positioned(
+//           //       //positioned of checkin layer at top UI
+//           //       left: 40,
+//           //       right: 40,
+//           //       top: 175,
+//           //       child: ClipRRect(
+//           //         borderRadius: BorderRadius.only(
+//           //           topLeft: Radius.circular(20),
+//           //           topRight: Radius.circular(20),
+//           //         ),
+//           //         child: Container(
+//           //           height: 160,
+//           //           width: 300,
+//           //           decoration: BoxDecoration(
+//           //             border: Border(bottom: BorderSide(color: darkRed)),
+//           //             color: Colors.lime,
+//           //           ),
+//           //         ),
+//           //       ),
+//           //     ),
+//           //   ],
+//           // ),
+//           ),
+//     );
+//   }
+// }
