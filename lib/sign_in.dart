@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:update_task01/cards/announCard.dart';
 import 'package:update_task01/cards/birthCard.dart';
+import 'package:update_task01/cards/eventCard.dart';
+import 'package:update_task01/cards/leaveCard.dart';
 import 'package:update_task01/home.dart';
 import 'package:update_task01/main_info.dart';
 
@@ -144,7 +146,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   onPressed: () {
                     Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => BirthDayCard()));
+                    .push(MaterialPageRoute(builder: (context) => EventCard()));
                   },
                 ),
               ],

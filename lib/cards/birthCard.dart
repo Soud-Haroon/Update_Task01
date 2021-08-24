@@ -9,13 +9,14 @@ class BirthDayCard extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          width: MediaQuery.of(context).size.width *0.9,
           height: 100,
           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(
               Radius.circular(20),
             ),
-            color: Colors.limeAccent,
+            color: Colors.white,
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,6 +32,7 @@ class BirthDayCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text('Hamza Ali', style: TextStyle(fontWeight: FontWeight.bold)),
                   Row(
