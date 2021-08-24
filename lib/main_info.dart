@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:update_task01/forms/form_2.dart';
 import 'package:update_task01/forms/form_3.dart';
+import 'package:update_task01/home.dart';
 import 'forms/form_1.dart';
 
 class Home extends StatefulWidget {
@@ -14,6 +15,7 @@ class _HomeState extends State<Home> {
     1: FormOne(),
     2: FormTwo(),
     3: FormThree(),
+    4: TasksScreen(),
   };
 
   @override

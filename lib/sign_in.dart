@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:update_task01/cards/announCard.dart';
+import 'package:update_task01/cards/birthCard.dart';
+import 'package:update_task01/home.dart';
 import 'package:update_task01/main_info.dart';
 
 //-------Main Login Screen------//
@@ -128,7 +131,10 @@ class _SignInState extends State<SignIn> {
                     'SignUp',
                     style: TextStyle(color: Colors.black),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => TasksScreen()));
+                  },
                 ),
                 SizedBox(width: 100),
                 TextButton(
@@ -136,7 +142,10 @@ class _SignInState extends State<SignIn> {
                     'Forget Password',
                     style: TextStyle(color: Colors.black),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => BirthDayCard()));
+                  },
                 ),
               ],
             ),
