@@ -1,24 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TasksScreen extends StatelessWidget {
+class MainHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlueAccent,
-        child: Icon(Icons.add),
-        onPressed: () {
-          showModalBottomSheet(
-            context: context,
-            isScrollControlled: true,
-            builder: (context) => Container(
-              height: MediaQuery.of(context).size.height * 0.75,
-              // child: AddTaskScreen(),
-            ),
-          );
-        },
-      ),
+      
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
     1: FormOne(),
     2: FormTwo(),
     3: FormThree(),
-    4: TasksScreen(),
+    4: MainHome(),
   };
 
   @override

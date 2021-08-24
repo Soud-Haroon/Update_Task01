@@ -166,7 +166,8 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 onPressed: () {
-                  print('Pressed');
+                  Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => MainHome()));
                 },
               ),
             )
