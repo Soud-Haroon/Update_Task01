@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MainHome extends StatelessWidget {
+class MainProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
-      
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

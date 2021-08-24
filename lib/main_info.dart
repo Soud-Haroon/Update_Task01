@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:update_task01/forms/form_2.dart';
 import 'package:update_task01/forms/form_3.dart';
-import 'package:update_task01/home.dart';
+import 'package:update_task01/mainProfile.dart';
 import 'forms/form_1.dart';
 
 class Home extends StatefulWidget {
@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
     1: FormOne(),
     2: FormTwo(),
     3: FormThree(),
-    4: MainHome(),
+    4: MainProfile(),
   };
 
   @override
@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
                       onPressed: () {
                         if (counter < 3) {
                           setState(() {
-                            counter ++;
+                            counter++;
                           });
                         } else {
                           counter = 1;

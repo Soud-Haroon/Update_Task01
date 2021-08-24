@@ -4,7 +4,7 @@ import 'package:update_task01/cards/birthCard.dart';
 import 'package:update_task01/cards/eventCard.dart';
 import 'package:update_task01/cards/leaveCard.dart';
 import 'package:update_task01/cards/teamCard.dart';
-import 'package:update_task01/home.dart';
+import 'package:update_task01/mainProfile.dart';
 import 'package:update_task01/main_info.dart';
 
 //-------Main Login Screen------//
@@ -78,36 +78,36 @@ class _SignInState extends State<SignIn> {
                       //----------------------------------//
                     }),
 
-                      SizedBox(height: 20),
-                      //-------------------------------------------------------//
-                      TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            hintText: "Password",
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                              ),
-                            ),
-                          ),
-                          validator: (value) {
-                              if (value!.contains(' ')) {
-                                return 'Password can not contain blank Spaces';
-                              } else if (value.length < 6) {
-                                return 'Enter atleast 8 characters';
-                              } else
-                                return null;
-                            }),
-                    ]),
+                SizedBox(height: 20),
+                //-------------------------------------------------------//
+                TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: "Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                        ),
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value!.contains(' ')) {
+                        return 'Password can not contain blank Spaces';
+                      } else if (value.length < 6) {
+                        return 'Enter atleast 8 characters';
+                      } else
+                        return null;
+                    }),
+              ]),
             ),
             SizedBox(height: 20),
             //--------------------------------------------//
@@ -135,8 +135,8 @@ class _SignInState extends State<SignIn> {
                     style: TextStyle(color: Colors.black),
                   ),
                   onPressed: () {
-                    Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => TeamCard()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => TeamCard()));
                   },
                 ),
                 SizedBox(width: 100),
@@ -146,8 +146,8 @@ class _SignInState extends State<SignIn> {
                     style: TextStyle(color: Colors.black),
                   ),
                   onPressed: () {
-                    Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => EventCard()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => EventCard()));
                   },
                 ),
               ],
@@ -166,8 +166,8 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => MainHome()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => MainProfile()));
                 },
               ),
             )
