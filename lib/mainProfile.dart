@@ -126,51 +126,52 @@ class _MainProfileState extends State<MainProfile> {
             //---------------------------------------------//
             headViewList('Leave Management'),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),
                   ),
                   color: Colors.white,
-                  ),
+                ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                    SizedBox(
-                      height: 220,
-                      child: ListView.builder(
-                        physics: NeverScrollableScrollPhysics(),
-                          itemCount: 3,
-                          itemBuilder: (context, index) => LeaveCard()),
-                    ),
-                    ElevatedButton(
-                        onPressed: () {},
-                        child:
-                            Text('Apply Leave', style: TextStyle(color: Colors.white))),
-                    SizedBox(height: 10),
-                  ]),
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 220,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: 3,
+                              itemBuilder: (context, index) => LeaveCard()),
+                        ),
+                        ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Apply Leave',
+                                style: TextStyle(color: Colors.white))),
+                        SizedBox(height: 10),
+                      ]),
                 ),
               ),
             ),
             //--------------------------------------------------------//
             headViewList('Team Member'),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-              child: SizedBox(height: 200,child: TeamCard()),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: SizedBox(height: 200, child: TeamCard()),
             ),
             //---------------------------------------------------------//
             headViewList('Events'),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: SizedBox(
-                height: 210,
-                    child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 3,
-                    itemBuilder: (context, index) => EventCard())),
+                  height: 210,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 3,
+                      itemBuilder: (context, index) => EventCard())),
             ),
           ],
         ),
