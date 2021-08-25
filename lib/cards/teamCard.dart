@@ -4,74 +4,71 @@ import 'package:percent_indicator/percent_indicator.dart';
 class TeamCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-              color: Colors.white,
+    return  Container(
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 30),
-                    Text(
-                      'Today Detail',
+            color: Colors.white,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(width: 30),
+                  Text(
+                    'Today Detail',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.red[700]),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text('Absents',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text('On Time',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text('Late',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text('12',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
-                          color: Colors.red[700]),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text('Absents',
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                    Text('On Time',
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                    Text('Late',
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text('12',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.blue[300])),
-                    Text('10',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.green[300])),
-                    Text('02',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.red[700])),
-                  ],
-                ),
-                SizedBox(height: 30),
-                Stack(
+                          color: Colors.blue[300])),
+                  Text('10',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.green[300])),
+                  Text('02',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.red[700])),
+                ],
+              ),
+              SizedBox(height: 30),
+              FittedBox(
+                child: Stack(
                   children: [
                     LinearPercentIndicator(
                       width: MediaQuery.of(context).size.width *0.9,
@@ -95,13 +92,11 @@ class TeamCard extends StatelessWidget {
                       progressColor: Colors.blue[300],
                     ),
                   ],
-                )
-              ],
-            ),
-            //------------Bar------------//
+                ),
+              )
+            ],
           ),
-        ),
-      ),
+          //------------Bar------------//
     );
   }
 }

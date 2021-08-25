@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:update_task01/cards/announCard.dart';
 import 'package:update_task01/cards/birthCard.dart';
+import 'package:update_task01/cards/eventCard.dart';
 import 'package:update_task01/cards/leaveCard.dart';
+import 'package:update_task01/cards/teamCard.dart';
 
 final darkRed = Color(0xffbf2634);
 
@@ -121,9 +123,10 @@ class _MainProfileState extends State<MainProfile> {
                   itemCount: 4,
                   itemBuilder: (context, index) => BirthDayCard()),
             ),
+            //---------------------------------------------//
             headViewList('Leave Management'),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
@@ -139,6 +142,7 @@ class _MainProfileState extends State<MainProfile> {
                     SizedBox(
                       height: 220,
                       child: ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
                           itemCount: 3,
                           itemBuilder: (context, index) => LeaveCard()),
                     ),
@@ -150,6 +154,23 @@ class _MainProfileState extends State<MainProfile> {
                   ]),
                 ),
               ),
+            ),
+            //--------------------------------------------------------//
+            headViewList('Team Member'),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+              child: SizedBox(height: 200,child: TeamCard()),
+            ),
+            //---------------------------------------------------------//
+            headViewList('Events'),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+              child: SizedBox(
+                height: 210,
+                    child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    itemBuilder: (context, index) => EventCard())),
             ),
           ],
         ),
