@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:update_task01/cards/announCard.dart';
+import 'package:update_task01/cards/birthCard.dart';
+import 'package:update_task01/cards/leaveCard.dart';
 
 final darkRed = Color(0xffbf2634);
 
@@ -18,6 +21,7 @@ class _MainProfileState extends State<MainProfile> {
         ),
       ),
       child: Scaffold(
+        backgroundColor: Color(0xfff4f4f4),
         body: ListView(
           children: [
             Container(
@@ -59,7 +63,7 @@ class _MainProfileState extends State<MainProfile> {
                   ),
                   //--------------backimage-end-----------------//
 
-                  //--------------mainWhite-Back---------------//
+                  //--------------mainWhite-Back-of-CenterCard---------------//
                   Positioned(
                     top: MediaQuery.of(context).size.height * 0.36,
                     left: 0,
@@ -73,11 +77,9 @@ class _MainProfileState extends State<MainProfile> {
                         ),
                         color: Colors.red,
                       ),
-                      //----------main--Content---------------//
-                      child: Column(),
                     ),
                   ),
-                  //-------------mainWhite--end--------------//
+                  //-------------mainWhite--end-Back-of-CenterCard----------//
 
                   //-------------center-card-----------------//
                   Positioned(
@@ -101,40 +103,52 @@ class _MainProfileState extends State<MainProfile> {
               ),
             ),
             SizedBox(height: 10),
+            //--------------------ALL--Widgets------------------//
+            headViewList('Announcements'),
+            Container(
+              height: 280,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) => MiniCardAnn()),
+            ),
+            //--------------------------------------//
+            headViewList('Birthday'),
+            Container(
+              height: 120,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) => BirthDayCard()),
+            ),
+            headViewList('Leave Management'),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Column(
-                children: [
-                  Row(
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                  color: Colors.white,
+                  ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(children: [
-                      Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.orange[900],
-                          ),
-                          child: Icon(Icons.link,
-                              size: 50, color: Colors.white)),
-                      SizedBox(width: 5),
-                      Text(
-                        'Announcement',
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      ]),
-                      TextButton(
-                        onPressed: () {
-                          // Navigator.of(context).push(
-                          //     MaterialPageRoute(
-                          //         builder: (context) => screen7()));
-                        },
-                        child: Text('View all'),
-                      ),
-                    ],
-                  )
-                ],
+                    SizedBox(
+                      height: 220,
+                      child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (context, index) => LeaveCard()),
+                    ),
+                    ElevatedButton(
+                        onPressed: () {},
+                        child:
+                            Text('Apply Leave', style: TextStyle(color: Colors.white))),
+                    SizedBox(height: 10),
+                  ]),
+                ),
               ),
             ),
           ],
@@ -142,101 +156,22 @@ class _MainProfileState extends State<MainProfile> {
       ),
     );
   }
+
+  Padding headViewList(String head) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      child: ListTile(
+        leading: Image(image: AssetImage('assets/ben.jpg'), height: 40),
+        title: Text('$head', style: TextStyle(fontWeight: FontWeight.bold)),
+        trailing: TextButton(
+            onPressed: () {},
+            child:
+                Text('View all', style: TextStyle(color: Color(0xffbf2634)))),
+      ),
+    );
+  }
 }
 
-// Stack(
-//           children: [
-//             Column(
-//               children: [
-//                 Container(
-//                   height: MediaQuery.of(context).size.height * 0.35,
-//                   decoration: BoxDecoration(
-//                     image: DecorationImage(
-//                       image: AssetImage('assets/foggy.jpg'),
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             Positioned(
-//               //positioned of checkin layer at top UI
-//               left: 40,
-//               right: 40,
-//               top: 175,
-//               child: ClipRRect(
-//                 borderRadius: BorderRadius.only(
-//                   topLeft: Radius.circular(20),
-//                   topRight: Radius.circular(20),
-//                 ),
-//                 child: Container(
-//                   height: 160,
-//                   width: 300,
-//                   decoration: BoxDecoration(
-//                     border: Border(bottom: BorderSide(color: darkRed)),
-//                     color: Colors.lime,
-//                   ),
-//                 ),
-//               ),
-//             ),
-//             Container(
-//               height: MediaQuery.of(context).size.height * 0.30,
-//               color: Colors.green,
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-
-// class MainProfile extends StatelfullWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       decoration: BoxDecoration(
-//         image: DecorationImage(
-//           image: AssetImage('assets/back.png'),
-//           fit: BoxFit.fill,
-//         ),
-//       ),
-//       child: Scaffold(
-//           // body: Stack(
-//           //   children: [
-//           //     Column(
-//           //       children: [
-//           //         Container(
-//           //           height: MediaQuery.of(context).size.height * 0.35,
-//           //           decoration: BoxDecoration(
-//           //             image: DecorationImage(
-//           //               image: AssetImage('assets/foggy.jpg'),
-//           //               fit: BoxFit.cover,
-//           //             ),
-//           //           ),
-//           //         ),
-//           //       ],
-//           //     ),
-//           //     Positioned(
-//           //       //positioned of checkin layer at top UI
-//           //       left: 40,
-//           //       right: 40,
-//           //       top: 175,
-//           //       child: ClipRRect(
-//           //         borderRadius: BorderRadius.only(
-//           //           topLeft: Radius.circular(20),
-//           //           topRight: Radius.circular(20),
-//           //         ),
-//           //         child: Container(
-//           //           height: 160,
-//           //           width: 300,
-//           //           decoration: BoxDecoration(
-//           //             border: Border(bottom: BorderSide(color: darkRed)),
-//           //             color: Colors.lime,
-//           //           ),
-//           //         ),
-//           //       ),
-//           //     ),
-//           //   ],
-//           // ),
-//           ),
-//     );
-//   }
-// }
+// final List<MiniCardAnn> announData = [
+//   MiniCardAnn(head: 'This super Leogue lorem 2017', body: 'Hello guys, we have discussed about post-corona vacation plan and out decision is to go to bali. We have have a very big party after this corona ends!', date: '14:01 20/10/2020'),
+// ];

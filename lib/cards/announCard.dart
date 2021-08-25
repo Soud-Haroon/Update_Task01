@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 final darkRed = Color(0xffbf2634);
 
 class MiniCardAnn extends StatelessWidget {
+  
   //reuse but with changing
   @override
   Widget build(BuildContext context) {
@@ -52,3 +53,8 @@ class MiniCardAnn extends StatelessWidget {
     );
   }
 }
+
+// String head;
+//   String body;
+//   String date;
+//   MiniCardAnn(this.head, this.body, this.date);

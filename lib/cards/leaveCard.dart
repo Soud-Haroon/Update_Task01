@@ -6,16 +6,15 @@ class LeaveCard extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ),
-            color: Colors.white,
-            ),
+    return Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
+          ),
+          color: Colors.white,
+          ),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
           child: Row(
             children: [
               CircleAvatar(
@@ -38,7 +37,7 @@ class LeaveCard extends StatelessWidget {
             ],
           ),
         ),
-      ),
+
     );
   }
 }

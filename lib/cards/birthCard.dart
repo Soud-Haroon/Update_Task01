@@ -6,18 +6,19 @@ class BirthDayCard extends StatelessWidget {
   //creating birthday card
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          width: MediaQuery.of(context).size.width *0.9,
-          height: 100,
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ),
-            color: Colors.white,
+    return Container(
+        width: MediaQuery.of(context).size.width *0.85,
+        // height: 100,
+        margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
           ),
+          color: Colors.white,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,7 +27,7 @@ class BirthDayCard extends StatelessWidget {
               ClipRRect(
                 borderRadius:
                     BorderRadius.circular(10.0), //add border radius here
-                child: Image.asset('assets/ben.jpg'), //add image location here
+                child: Image.asset('assets/ben.jpg',height: 85), //add image location here
               ),
               SizedBox(width: 20),
               Column(
@@ -47,7 +48,7 @@ class BirthDayCard extends StatelessWidget {
               ]),
               // SizedBox(width: 100),
               Align(
-                alignment: Alignment.topCenter,
+                alignment: Alignment.center,
                 child: IconButton(
                     icon: Icon(
                       Icons.celebration_outlined,
@@ -75,7 +76,6 @@ class BirthDayCard extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }
