@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:update_task01/mainProfile.dart';
 import 'package:update_task01/main_info.dart';
+import 'package:update_task01/navigation.dart';
 
 //-------Main Login Screen------//
 
@@ -147,7 +147,7 @@ class _SignInState extends State<SignIn> {
               highlightColor: Colors.red[100],
               onTap: (){
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => MainProfile()));
+                    .push(MaterialPageRoute(builder: (context) => Navigationbar()));
               },
               child: Container(
                 height: 60,

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:update_task01/navigation.dart';
+import 'package:flutter/services.dart';
+import 'package:update_task01/sign_in.dart';
+
+// void main() {
+//   SystemChrome.setEnabledSystemUIOverlays([]);
+//   runApp(MyApp());
+// }
 
 void main() {
   runApp(MyApp());
+  SystemChrome.setEnabledSystemUIOverlays([]);
 }
 
 class MyApp extends StatelessWidget {
@@ -10,11 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Alchemative',
       theme: ThemeData(
         primarySwatch: _materialColor,
       ),
-      home: Navigationbar(),
+      home: SignIn(),
     );
   }
 }
@@ -31,7 +39,6 @@ const MaterialColor _materialColor = MaterialColor(0xffBF2634, <int, Color>{
   800: Color(0xffBF2634),
   900: Color(0xffBF2634),
 });
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
