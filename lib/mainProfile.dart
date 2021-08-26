@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:update_task01/cards/announCard.dart';
-import 'package:update_task01/cards/birthCard.dart';
-import 'package:update_task01/cards/eventCard.dart';
-import 'package:update_task01/cards/leaveCard.dart';
 import 'package:update_task01/cards/teamCard.dart';
 import 'package:update_task01/content/listofdata.dart';
 
@@ -289,7 +285,3 @@ class _MainProfileState extends State<MainProfile> {
     );
   }
 }
-
-// final List<MiniCardAnn> announData = [
-//   MiniCardAnn(head: 'This super Leogue lorem 2017', body: 'Hello guys, we have discussed about post-corona vacation plan and out decision is to go to bali. We have have a very big party after this corona ends!', date: '14:01 20/10/2020'),
-// ];
