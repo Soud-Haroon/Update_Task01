@@ -270,7 +270,9 @@ class _MainProfileState extends State<MainProfile> {
       ),
     );
   }
+  //-----------------------UI--ended--------------------------------//
 
+  //-----------------HeadView-Extracted-below----------------------//
   Padding headViewList(String head,String icon) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),

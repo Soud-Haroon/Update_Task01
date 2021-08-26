@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:update_task01/cards/announCard.dart';
-import 'package:update_task01/cards/birthCard.dart';
-import 'package:update_task01/cards/eventCard.dart';
-import 'package:update_task01/cards/leaveCard.dart';
-import 'package:update_task01/cards/teamCard.dart';
 import 'package:update_task01/mainProfile.dart';
 import 'package:update_task01/main_info.dart';
 
@@ -134,10 +129,7 @@ class _SignInState extends State<SignIn> {
                     'SignUp',
                     style: TextStyle(color: Colors.black),
                   ),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => TeamCard()));
-                  },
+                  onPressed: () {},
                 ),
                 SizedBox(width: 100),
                 TextButton(
@@ -145,31 +137,31 @@ class _SignInState extends State<SignIn> {
                     'Forget Password',
                     style: TextStyle(color: Colors.black),
                   ),
-                  onPressed: () {
-                    // Navigator.of(context).push(
-                    //     MaterialPageRoute(builder: (context) => EventCard()));
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
             SizedBox(height: 20),
             //--------------------------------------------------------//
-            SizedBox(
-              height: 60,
-              child: OutlinedButton.icon(
-                label: Text('LOG IN WITH GOOGLE'),
-                icon: Icon(Icons.facebook),
-                style: OutlinedButton.styleFrom(
-                  side: BorderSide(
-                    width: 1,
-                    color: Colors.red,
-                  ),
+            InkWell(
+              highlightColor: Colors.red[100],
+              onTap: (){
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => MainProfile()));
+              },
+              child: Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xffbf2634)),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => MainProfile()));
-                },
-              ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Image.asset('assets/google.png', height: 20),
+                  SizedBox(width: 10),
+                  Text('LOG I WITH GOOGLE', style: TextStyle(color: Color(0xffbf2634),fontWeight: FontWeight.bold)),
+                ])),
             )
           ],
         ),
