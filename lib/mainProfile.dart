@@ -43,6 +43,12 @@ class _MainProfileState extends State<MainProfile> {
                         // crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [Icon(Icons.notifications, color: Colors.white)]),
+                          ),
                           CircleAvatar(
                             backgroundImage: AssetImage('assets/ben.jpg'),
                             maxRadius: 40,
