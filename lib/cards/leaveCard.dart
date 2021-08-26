@@ -20,7 +20,7 @@ class LeaveCard extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
-              backgroundImage: AssetImage('assets/ben.jpg'),
+              backgroundImage: AssetImage('assets/custom/round.png'),
               radius: 30,
             ),
             SizedBox(width: 20),

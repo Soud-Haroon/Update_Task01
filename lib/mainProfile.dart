@@ -167,7 +167,7 @@ class _MainProfileState extends State<MainProfile> {
             ),
             SizedBox(height: 10),
             //--------------------ALL--Widgets------------------//
-            headViewList('Announcements'),
+            headViewList('Announcements', 'orange'),
             Container(
               height: 280,
               child: ListView.builder(
@@ -176,7 +176,7 @@ class _MainProfileState extends State<MainProfile> {
                   itemBuilder: (context, index) => annCardData[index]),
             ),
             //--------------------------------------//
-            headViewList('Birthday'),
+            headViewList('Birthday', 'lightgreen'),
             Container(
               height: 120,
               child: ListView.builder(
@@ -185,7 +185,7 @@ class _MainProfileState extends State<MainProfile> {
                   itemBuilder: (context, index) => birthCardData[index]),
             ),
             //---------------------------------------------//
-            headViewList('Leave Management'),
+            headViewList('Leave Management','green'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Container(
@@ -219,13 +219,13 @@ class _MainProfileState extends State<MainProfile> {
               ),
             ),
             //--------------------------------------------------------//
-            headViewList('Team Member'),
+            headViewList('Team Member', 'green'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: SizedBox(height: 200, child: TeamCard()),
             ),
             //---------------------------------------------------------//
-            headViewList('Events'),
+            headViewList('Events', 'blue'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: SizedBox(
@@ -236,7 +236,7 @@ class _MainProfileState extends State<MainProfile> {
                       itemBuilder: (context, index) => eventCardData[index])),
             ),
             //---------------------------------------------------------//
-            headViewList('Upcoming Holidays'),
+            headViewList('Upcoming Holidays', 'lightblue'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Container(
@@ -271,11 +271,11 @@ class _MainProfileState extends State<MainProfile> {
     );
   }
 
-  Padding headViewList(String head) {
+  Padding headViewList(String head,String icon) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: ListTile(
-        leading: Image(image: AssetImage('assets/ben.jpg'), height: 40),
+        leading: Image(image: AssetImage('assets/custom/$icon.png'), height: 40),
         title: Text('$head', style: TextStyle(fontWeight: FontWeight.bold)),
         trailing: TextButton(
             onPressed: () {},
