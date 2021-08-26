@@ -4,6 +4,7 @@ import 'package:update_task01/cards/birthCard.dart';
 import 'package:update_task01/cards/eventCard.dart';
 import 'package:update_task01/cards/leaveCard.dart';
 import 'package:update_task01/cards/teamCard.dart';
+import 'package:update_task01/content/listofdata.dart';
 
 final darkRed = Color(0xffbf2634);
 
@@ -101,7 +102,7 @@ class _MainProfileState extends State<MainProfile> {
                           decoration: BoxDecoration(
                             border: Border(
                                 bottom: BorderSide(color: darkRed, width: 3)),
-                            color: Colors.blue,
+                            color: Colors.white,
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -123,7 +124,7 @@ class _MainProfileState extends State<MainProfile> {
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18)),
-                                    //----------------------//        
+                                    //----------------------//
                                     TextButton(
                                         onPressed: () {
                                           // Navigator.of(context).push(
@@ -134,28 +135,29 @@ class _MainProfileState extends State<MainProfile> {
                                   ],
                                 ),
                                 Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                  Container(
-                                      padding: EdgeInsets.all(5),
-                                      height: 100,
-                                      width: 100,
-                                      decoration: BoxDecoration(
-                                        border:
-                                            Border.all(color: darkRed, width: 3),
-                                        borderRadius: BorderRadius.circular(100),
-                                        color: Colors.white,
-                                      ),
-                                      child: ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text('Check In',
-                                            style: TextStyle(fontSize: 11)),
-                                        style: ElevatedButton.styleFrom(
-                                          shape: CircleBorder(),
-                                          // padding: EdgeInsets.all(14),
-                                        ),
-                                      ))
-                                ])
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                          padding: EdgeInsets.all(5),
+                                          height: 100,
+                                          width: 100,
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                                color: darkRed, width: 3),
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            color: Colors.white,
+                                          ),
+                                          child: ElevatedButton(
+                                            onPressed: () {},
+                                            child: Text('Check In',
+                                                style: TextStyle(fontSize: 11)),
+                                            style: ElevatedButton.styleFrom(
+                                              shape: CircleBorder(),
+                                              // padding: EdgeInsets.all(14),
+                                            ),
+                                          ))
+                                    ])
                               ],
                             ),
                           ),
@@ -174,8 +176,8 @@ class _MainProfileState extends State<MainProfile> {
               height: 280,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 4,
-                  itemBuilder: (context, index) => MiniCardAnn()),
+                  itemCount: annCardData.length,
+                  itemBuilder: (context, index) => annCardData[index]),
             ),
             //--------------------------------------//
             headViewList('Birthday'),
@@ -183,8 +185,8 @@ class _MainProfileState extends State<MainProfile> {
               height: 120,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 4,
-                  itemBuilder: (context, index) => BirthDayCard()),
+                  itemCount: birthCardData.length,
+                  itemBuilder: (context, index) => birthCardData[index]),
             ),
             //---------------------------------------------//
             headViewList('Leave Management'),
@@ -207,8 +209,9 @@ class _MainProfileState extends State<MainProfile> {
                           height: 220,
                           child: ListView.builder(
                               physics: NeverScrollableScrollPhysics(),
-                              itemCount: 3,
-                              itemBuilder: (context, index) => LeaveCard()),
+                              itemCount: leaveCardData.length,
+                              itemBuilder: (context, index) =>
+                                  leaveCardData[index]),
                         ),
                         ElevatedButton(
                             onPressed: () {},
@@ -233,8 +236,8 @@ class _MainProfileState extends State<MainProfile> {
                   height: 210,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 3,
-                      itemBuilder: (context, index) => EventCard())),
+                      itemCount: eventCardData.length,
+                      itemBuilder: (context, index) => eventCardData[index])),
             ),
             //---------------------------------------------------------//
             headViewList('Upcoming Holidays'),
@@ -257,8 +260,9 @@ class _MainProfileState extends State<MainProfile> {
                           height: 210,
                           child: ListView.builder(
                               physics: NeverScrollableScrollPhysics(),
-                              itemCount: 3,
-                              itemBuilder: (context, index) => LeaveCard()),
+                              itemCount: holidayCardData.length,
+                              itemBuilder: (context, index) =>
+                                  holidayCardData[index]),
                         ),
                       ]),
                 ),

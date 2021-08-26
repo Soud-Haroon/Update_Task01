@@ -146,8 +146,8 @@ class _SignInState extends State<SignIn> {
                     style: TextStyle(color: Colors.black),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => EventCard()));
+                    // Navigator.of(context).push(
+                    //     MaterialPageRoute(builder: (context) => EventCard()));
                   },
                 ),
               ],
